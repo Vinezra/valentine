@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You 🤍</title>
+
+  <!-- Font aesthetic -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Audio (akan diputar via JS setelah halaman terbuka / tap) -->
+<audio id="music" loop>
+  <source src="assets/audio/musik.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card surprise-card">
+
+  <h1>Happy Valentine</h1>
+
+  <!-- Subtle romantic line -->
+  <p class="subtitle">
+    untuk kamu yang berharga buatkuu
+  </p>
+
+  <!-- Typing message -->
+  <p id="message" class="typing"></p>
+
+  <!-- SLIDER FOTO -->
+  <div class="slider">
+
+    <!-- FOTO BESAR -->
+    <div class="slider-main">
+      <img id="mainImage" src="assets/images/foto1.png" alt="Kenangan">
+    </div>
+
+    <!-- Caption kecil -->
+    <p class="memory-text">
+      sedikit kenangan, tapi perasaannya banyak 💖
+    </p>
+
+    <!-- THUMBNAIL -->
+    <div class="slider-thumbs">
+      <img src="assets/images/foto1.png" class="active">
+      <img src="assets/images/foto2.png">
+      <img src="assets/images/foto3.png">
+      <img src="assets/images/foto4.png">
+      <img src="assets/images/foto5.png">
+      <img src="assets/images/foto6.png">
+    </div>
+
+  </div>
+
+</div>
+
+<script src="assets/js/surprise.js"></script>
+
+<!-- Auto play after coming from YES / first tap -->
+<script>
+  const music = document.getElementById("music");
+  music.play().catch(() => {
+    document.body.addEventListener("click", () => {
+      music.play();
+    }, { once:true });
+  });
+</script>
+
+</body>
+</html>
